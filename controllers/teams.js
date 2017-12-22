@@ -21,15 +21,7 @@ router.get('/new', function(req, res) {
 
 router.get('/edit/:name', function(req,res){
 	var team= teamService.getTeam(req.params.name);
-	console.log("---",team);
 	res.render("teams/edit", {team: team});
-});
-
-router.get('/:name', function(req, res) {
-  // search for the team name in all the teams.
-  var team = teamService.getTeam(req.params.name);
-
-  res.render('teams/show', { team: team });
 });
 
 router.delete('/:name', function(req, res){
@@ -37,10 +29,10 @@ router.delete('/:name', function(req, res){
 	res.send("Success");
 });
 
+
 router.put('/:name', function(req, res){
-	console.log("name:", req.params.name);
-	console.log('req.body is', req.body);
-	res.send("PUT ROUTE");
+	teamService.editTeam(req.params.name, req.body);
+	res.send(Success);
 });
 
 module.exports = router;

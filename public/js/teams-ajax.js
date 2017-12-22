@@ -20,9 +20,9 @@ $(document).ready(function() {
 			data:{
 				name: $("#new-name").val(),
 				members: $("#members").val()
-			}
+				}
 			}).done(function(response){
-				console.log("got to the promise");
+				window.location.href ="/teams";
 
 		});
 	});
