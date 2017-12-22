@@ -9,7 +9,7 @@ app.use(ejsLayouts);
 app.use(express.static(__dirname + '/public'));
 
 app.get('/', function(req, res) {
-  res.render('index');
+  res.render('index', {showDelete:false, showUpdate: false});
 });
 
 app.use('/teams', require('./controllers/teams'));

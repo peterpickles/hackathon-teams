@@ -1,11 +1,11 @@
-var fs = require('fs');
+var fs = require('fs'); //include file system and load the module
 
-function allTeams() {
+function allTeams() { //loading up the JSON and setting the place to GET the index
   var teams = fs.readFileSync('./models/data.json');
   return JSON.parse(teams);
 }
 
-function getTeam(teamName) {
+function getTeam(teamName) { //interate through the object and get teamname
   var teams = allTeams();
 
   for (var i = 0; i < teams.length; i++) {
@@ -15,7 +15,7 @@ function getTeam(teamName) {
   }
 }
 
-function deleteTeam(teamName) {
+function deleteTeam(teamName) { 
   var teams = allTeams();
   var index = -1;
 
